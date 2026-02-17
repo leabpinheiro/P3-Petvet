@@ -33,7 +33,7 @@ class reminderRepository {
 
   async getByOwner(ownerId: number): Promise<Rows> {
     const [reminders] = await databaseClient.query<Rows>(
-      `SELECT reminder.*, pet.name AS petName, pet.photo
+      `SELECT reminder.*, pet.name AS petName, pet.specie
        FROM reminder
        JOIN pet ON pet.id = reminder.pet_id
        JOIN pet_user ON pet_user.pet_id = pet.id

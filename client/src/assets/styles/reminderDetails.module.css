@@ -31,6 +31,7 @@
   font-family: var(--font-text);
   font-weight: bold;
   text-decoration: underline;
+  word-break: break-all;
 }
 
 .reminderModalContent .dateReminder h3 {
@@ -146,6 +147,8 @@
     grid-row: 1 / 2;
     grid-column: 1 / 2;
     font-size: 1.2rem;
+    max-width: 16ch;
+    word-break: break-all;
   }
   .reminderModalContent .dateReminder {
     grid-row: 2 / 3;
@@ -156,9 +159,12 @@
   }
   .reminderModalContent .dateReminder h3 {
     font-size: 1rem;
+    width: 3rem;
   }
   .reminderModalContent .dateReminder p {
     font-size: 1rem;
+    max-width: 22ch;
+    word-break: break-all;
   }
   .reminderModalContent .animalNameReminder {
     grid-row: 3 / 4;
@@ -169,11 +175,11 @@
   }
   .reminderModalContent .animalNameReminder h3 {
     font-size: 1rem;
+    width: 4rem;
   }
   .reminderModalContent .animalNameReminder p {
     font-size: 1rem;
   }
-
   .frequencyReminder {
     grid-row: 4 / 5;
     grid-column: 1 / 2;
@@ -181,7 +187,10 @@
   .reminderModalContent .contentReminder {
     grid-row: 5 / 6;
     grid-column: 1 / 2;
+    max-width: 100%;
+    word-break: break-all;
   }
+
   .reminderModalContent .contentReminder h3 {
     font-size: 1rem;
   }

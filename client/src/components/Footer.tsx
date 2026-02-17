@@ -5,7 +5,7 @@ function Footer() {
     <footer className={styles.footer}>
       <p>&copy; 2026 Pet&Vet - Tous droits réservés.</p>
 
-      <p>Made with ❤️ by Pet&Vet Team </p>
+      <p>Made with ❤️ by Pet&Vet Team</p>
     </footer>
   );
 }

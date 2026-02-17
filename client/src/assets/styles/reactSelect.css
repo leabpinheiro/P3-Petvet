@@ -1,0 +1,46 @@
+.rs__control {
+  background-color: #e5e7eb !important;
+  border: none !important;
+  border-radius: 12px !important;
+  min-height: 44px !important;
+  box-shadow: none !important;
+}
+
+.rs__control:hover {
+  border: none !important;
+}
+
+.rs__control--is-focused {
+  box-shadow: none !important;
+}
+
+.rs__indicator-separator {
+  display: none !important;
+}
+
+.rs__menu {
+  background-color: #e5e7eb !important;
+  border-radius: 12px !important;
+  overflow: hidden !important;
+}
+
+.rs__menu-list {
+  background-color: #e5e7eb !important;
+  padding: 6px !important;
+}
+
+.rs__option {
+  background-color: #e5e7eb !important;
+  color: #111827 !important;
+  border-radius: 8px !important;
+  padding: 10px 12px !important;
+}
+
+.rs__option--is-focused {
+  background-color: #d1d5db !important;
+}
+
+.rs__option--is-selected {
+  background-color: #c7d2fe !important;
+  color: #111827 !important;
+}

@@ -33,90 +33,99 @@ function Login() {
         const userData = await response.json();
         localStorage.setItem("token", userData.token); /*a checker*/
         auth?.setUser(userData.user);
-        navigate("/");
+        navigate("/dashboard");
       }
-    } catch (err) {
-      setError("Email ou mot de passe incorrect");
+    } catch (error: unknown) {
+      setError(
+        error instanceof Error
+          ? error.message
+          : "Mail ou mot de passe incorrect",
+      );
     }
   };
 
   return (
-    <div className={styles.loginPage}>
-      <nav className={styles.navLogin}>
-        <div className={styles.logoContainer}>
-          <img
-            className={styles.logo1}
-            src="/images/green/logo.png"
-            alt="Green Logo PetVet"
-          />
-          <img
-            className={styles.logo2}
-            src="/images/blue/logo.png"
-            alt="Blue logo PetVet"
-          />
+    <>
+      <div className={styles.loginPage}>
+        <nav className={styles.navLogin}>
+          <div className={styles.navHead}>
+            <div className={styles.logoContainer}>
+              <img
+                className={styles.logo1}
+                src="/images/green/logo.png"
+                alt="Green Logo PetVet"
+              />
+              <img
+                className={styles.logo2}
+                src="/images/blue/logo.png"
+                alt="Blue logo PetVet"
+              />
+            </div>
+
+            <h1 className={styles.petVet}>Pet&Vet</h1>
+          </div>
+          <button
+            type="button"
+            className={styles.buttonHomeLoginPage}
+            onClick={() => navigate("/")}
+          >
+            <img src="/images/paw.png" alt="paw" className={styles.pawLogin} />
+            Accueil
+          </button>
+        </nav>
+        <div className={styles.mainContainer}>
+          <section className={styles.loginSectionForm}>
+            <article className={styles.formContainer}>
+              <h1>Connexion</h1>
+              <h2>à mon espace</h2>
+              <p className={styles.errorMessage}>{error}</p>
+              <form onSubmit={login} className={styles.loginForm}>
+                <div>
+                  <label htmlFor="email">
+                    <p>
+                      Email <span>*</span>
+                    </p>
+                    <input type="email" id="email" ref={emailRef} />
+                  </label>
+                </div>
+                <div>
+                  <label htmlFor="password">
+                    <p>
+                      Mot de passe <span>*</span>
+                    </p>
+                    <input type="password" id="password" ref={passwordRef} />
+                  </label>
+                </div>
+                <button type="submit" className={styles.buttonSubmit}>
+                  Connexion
+                </button>
+              </form>
+            </article>
+            <article className={styles.loginSection}>
+              <div className={styles.imgContainer}>
+                <img src="/images/green/calendar.png" alt="Green Calendar" />
+                <img src="/images/blue/stetoscope.png" alt="Blue Stetoscope" />
+              </div>
+              <div className={styles.loginSectionText}>
+                <h2>Première fois chez Pet&Vet ?</h2>
+                <p>
+                  Créez votre espace{" "}
+                  <span className={styles.owner}>propriétaire</span> ou{" "}
+                  <span className={styles.vet}>vétérinaire</span> en cliquant
+                  ici :
+                </p>
+              </div>
+              <Link to={"/register"}>
+                <button type="button" className={styles.registerButton}>
+                  Inscription
+                </button>
+              </Link>
+            </article>
+          </section>
         </div>
-        <button
-          type="button"
-          className={styles.buttonHomeLoginPage}
-          onClick={() => navigate("/")}
-        >
-          <img src="/images/paw.png" alt="paw" className={styles.pawLogin} />
-          Accueil
-        </button>
-        <h1 className={styles.petVet}>Pet&Vet</h1>
-      </nav>
-      <div className={styles.mainContainer}>
-        <section className={styles.loginSectionForm}>
-          <article className={styles.formContainer}>
-            <h1>Connexion</h1>
-            <h2>à mon espace</h2>
-            <p>{error}</p>
-            <form onSubmit={login} className={styles.loginForm}>
-              <div>
-                <label htmlFor="email">
-                  <p>
-                    Email <span>*</span>
-                  </p>
-                  <input type="email" id="email" ref={emailRef} />
-                </label>
-              </div>
-              <div>
-                <label htmlFor="password">
-                  <p>
-                    Mot de passe <span>*</span>
-                  </p>
-                  <input type="password" id="password" ref={passwordRef} />
-                </label>
-              </div>
-              <button type="submit" className={styles.buttonSubmit}>
-                Connexion
-              </button>
-            </form>
-          </article>
-          <article className={styles.loginSection}>
-            <div className={styles.imgContainer}>
-              <img src="/images/green/calendar.png" alt="Green Calendar" />
-              <img src="/images/blue/stetoscope.png" alt="Blue Stetoscope" />
-            </div>
-            <div className={styles.loginSectionText}>
-              <h2>Première fois chez Pet&Vet ?</h2>
-              <p>
-                Créez votre espace{" "}
-                <span className={styles.owner}>propriétaire</span> ou{" "}
-                <span className={styles.vet}>vétérinaire</span> en cliquant ici
-                :
-              </p>
-            </div>
-            <Link to={"/register"}>
-              <button type="button" className={styles.registerButton}>
-                Inscription
-              </button>
-            </Link>
-          </article>
-        </section>
       </div>
       <Footer />
-    </div>
+    </>
   );
 }
 

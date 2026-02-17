@@ -1,0 +1,402 @@
+.allSections {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px;
+  margin: auto;
+}
+
+.petSection {
+  background-color: white;
+  margin-top: 50px;
+  padding: 20px;
+  height: 480px;
+  border-radius: 15px;
+  color: var(--text-color);
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+}
+
+.animalsPart {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.petsCards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 20px;
+}
+
+.myPets {
+  font-family: var(--font-title);
+  font-size: 1.8rem;
+  font-weight: bold;
+  padding-bottom: 10px;
+}
+
+.petInfos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  width: 250px;
+  height: 150px;
+  border-radius: 15px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: stretch;
+  background-color: var(--main-color);
+}
+.petInfos h3 {
+  font-family: var(--font-logo);
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+.gender {
+  text-align: right;
+  font-size: larger;
+  font-family: var(--font-text);
+}
+
+.petInfoContainer {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.petImage {
+  height: 50px;
+  width: 50px;
+  padding: 20px;
+}
+.divImage {
+  border-radius: 50%;
+  border: solid 7px var(--owner-color);
+}
+
+.petText {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  max-width: 18ch;
+}
+
+.breed {
+  font-family: var(--font-text);
+  font-style: italic;
+  color: black;
+}
+
+.buttonContainer {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  padding-bottom: 20px;
+}
+
+.actSection h3 {
+  max-width: 20ch;
+  word-break: break-all;
+  font-size: 1.2rem;
+  font-family: var(--font-logo);
+  font-weight: bold;
+  color: var(--text-color);
+}
+.petButton {
+  display: flex;
+  justify-content: center;
+  background-color: var(--owner-color);
+  font-family: var(--font-text);
+  font-size: 1.1rem;
+  color: white;
+  width: 150px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.linkButton {
+  text-decoration: none;
+}
+
+.viewMoreContainer {
+  display: flex;
+  justify-content: end;
+  padding-top: 20px;
+}
+
+.viewMore {
+  border: none;
+  font-family: var(--font-text);
+  background-color: white;
+  font-size: 1.1rem;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.actSection {
+  background-color: white;
+  margin-top: 50px;
+  padding: 1.25rem;
+  border-radius: 15px;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+  width: 500px;
+  height: 480px;
+  color: var(--text-color);
+}
+
+.petsActivities {
+  font-family: var(--font-title);
+  font-size: 1.8rem;
+  font-weight: bold;
+  padding-bottom: 10px;
+}
+
+.actCard {
+  width: 400px;
+  border: none;
+  padding: 1.5rem;
+  background-color: var(--main-color);
+  border-radius: 50px;
+  margin: 0.5rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+  gap: 10px;
+}
+
+.actLogo {
+  width: 50px;
+  height: 50px;
+  border-radius: 0;
+}
+
+.actText {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.actCards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-height: 400px;
+  width: auto;
+  padding-right: 10px;
+  overflow: auto;
+  scrollbar-color: var(--owner-color) #f0f0f0;
+  scrollbar-width: auto;
+}
+
+.emergencySection {
+  font-family: var(--font-text);
+  color: var(--text-color);
+  width: 60%;
+  background-color: white;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+}
+
+.emergencySection h2 {
+  font-size: 1.8rem;
+  margin: 20px;
+  font-weight: bold;
+}
+.knowledge {
+  display: flex;
+  flex-wrap: nowrap;
+}
+.knowledge article {
+  margin: 0 30px 30px 30px;
+  background-color: var(--main-color);
+  padding: 20px;
+  border-radius: 10px;
+}
+.knowledge article h3 {
+  margin: 10px 0 10px 0;
+}
+.emergencySection p {
+  width: 100%;
+  margin-top: 20px;
+  line-height: 1.5rem;
+}
+.emergencySection img {
+  border-radius: 0;
+  height: 40px;
+  width: auto;
+  margin-right: 20px;
+}
+.disclaimer {
+  width: 60%;
+  text-align: center;
+  padding: 20px;
+  margin: 50px auto;
+  background-color: #faecdb;
+  font-size: 2rem;
+  font-family: var(--font-text);
+  color: var(--text-color);
+  border-radius: 15px;
+}
+.infoTitle {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.infoTitle h3 {
+  font-family: var(--font-logo);
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: var(--text-color);
+  margin-left: 10px;
+}
+@media screen and (max-width: 678px) {
+  .allSections {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .animalsPart {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .petsCards {
+    display: flex;
+    gap: 1rem;
+    width: auto;
+    overflow-x: auto;
+    padding-bottom: 10px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .petsCards::-webkit-scrollbar {
+    display: none;
+  }
+
+  .petInfos {
+    min-width: 80%;
+    scroll-snap-align: start;
+    height: auto;
+  }
+
+  .petSection {
+    width: 90%;
+    height: auto;
+  }
+
+  .petImage {
+    height: 70px;
+    width: 70px;
+    border-radius: 0;
+  }
+
+  .petInfoContainer {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    gap: 20px;
+  }
+
+  .gender {
+    display: none;
+  }
+
+  .breed {
+    display: none;
+  }
+
+  .buttonContainer {
+    padding-top: 10px;
+    justify-content: center;
+  }
+
+  .petButton {
+    font-size: small;
+  }
+
+  .viewMoreContainer {
+    justify-content: center;
+  }
+
+  .viewMore {
+    font-size: small;
+  }
+
+  .actSection {
+    width: 87%;
+  }
+  .actSection h3 {
+    max-width: 20ch;
+    word-break: break-all;
+    font-size: 1rem;
+  }
+  .actCard {
+    flex-direction: column;
+    width: 70%;
+  }
+
+  .actLogo {
+    width: 30px;
+    height: 30px;
+  }
+
+  .actText h3 {
+    font-size: 1rem;
+    text-align: center;
+    max-width: 20ch;
+    word-break: break-all;
+  }
+  .actText p {
+    font-size: small;
+  }
+
+  .date {
+    font-size: small;
+  }
+
+  .emergencySection {
+    width: 100%;
+  }
+
+  .knowledge {
+    flex-direction: column;
+  }
+
+  .infoTitle {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .infoTitle h3 {
+    font-size: 1.1rem;
+  }
+
+  .emergencySection p {
+    text-align: center;
+    font-size: 1rem;
+  }
+
+  .disclaimer {
+    font-size: 1rem;
+    text-decoration: underline;
+  }
+}

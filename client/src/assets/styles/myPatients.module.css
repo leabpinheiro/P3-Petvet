@@ -1,0 +1,316 @@
+.mainPage {
+  display: flex;
+  height: 100vh;
+}
+
+.sizePage {
+  min-height: calc(100vh - 57px);
+}
+
+.sectionsContainer {
+  flex-direction: column;
+  padding-top: 150px;
+}
+
+.petVet {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-logo);
+  font-weight: 800;
+  font-size: 3rem;
+  color: var(--text-color);
+  padding-top: 30px;
+  padding-right: 80px;
+}
+
+.logo {
+  height: 100px;
+  width: auto;
+  margin-left: 6rem;
+}
+
+.imagePetList {
+  height: 80px;
+  width: 80px;
+  padding: 20px;
+}
+
+.newPatient {
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  align-items: center;
+  width: 100%;
+}
+
+.titleNewPatient {
+  font-family: var(--font-logo);
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.inputPatient {
+  font-family: var(--font-text);
+}
+
+.selectedPatient {
+  width: 320px;
+}
+
+.addPatientButton {
+  width: 200px;
+  height: 50px;
+  background-color: var(--vet-color);
+  font-family: var(--font-text);
+  font-size: 1.2rem;
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  img {
+    width: 0.8rem;
+    height: auto;
+    margin-right: 1rem;
+  }
+}
+
+.addPatientSucces {
+  text-align: center;
+  color: var(--owner-color);
+}
+
+.addPatientError {
+  text-align: center;
+  color: #d4896c;
+}
+
+.patientsSearchBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.titlePatient {
+  font-family: var(--font-logo);
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.patientsList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.patientCard {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 320px;
+  padding: 30px 20px;
+  margin: 20px;
+  border-radius: 20px;
+  background: white;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+
+  transition: all 0.3s ease;
+}
+
+.patientCard:hover {
+  transform: translateY(-5px);
+}
+
+.patientGenderWrapper {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+.divImage {
+  border-radius: 50%;
+  border: solid 7px var(--vet-color);
+}
+.patientGenderImage {
+  width: 22px;
+  height: 22px;
+}
+
+.patientPhoto {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+.patientInfo {
+  flex: 1;
+  margin-left: 18px;
+  margin-right: 18px;
+  text-align: center;
+}
+
+.patientName {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin: 0;
+  font-family: var(--font-logo);
+  color: var(--text-color);
+}
+
+.ownerName {
+  font-size: 14px;
+  font-family: var(--font-text);
+  color: var(--text-color);
+  margin-top: 4px;
+}
+
+.healthRecordButton {
+  width: 150px;
+  height: 50px;
+  background-color: var(--vet-color);
+  font-family: var(--font-text);
+  font-size: 1rem;
+  margin-top: 40px;
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.healthRecordButton:hover {
+  background: #6f9ac7;
+}
+
+.patientInput {
+  font-family: var(--font-text);
+}
+
+@media (max-width: 480px) {
+  .sectionsContainer {
+    padding-top: 50px;
+  }
+
+  .mainPage {
+    flex-direction: column;
+  }
+
+  .petVet {
+    font-size: 2rem;
+    padding: 1rem;
+    justify-content: space-between;
+    width: 80vw;
+  }
+
+  .logo {
+    height: 80px;
+    margin: 0;
+  }
+
+  .inputPatient {
+    display: block;
+    width: 300px;
+  }
+
+  .newPatient {
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 16px;
+  }
+
+  .titleNewPatient {
+    padding-top: 20px;
+    font-size: 1.6rem;
+    text-align: center;
+  }
+
+  .selectedPatient {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    max-width: 360px;
+  }
+
+  .addPatientButton {
+    max-width: 360px;
+    height: 48px;
+    font-size: 1rem;
+    border-radius: 14px;
+  }
+
+  .patientsSearchBar {
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 28px;
+    margin-bottom: 20px;
+    padding: 0 16px;
+  }
+
+  .titlePatient {
+    font-size: 1.6rem;
+    text-align: center;
+  }
+
+  .patientsList {
+    padding: 0 12px;
+  }
+
+  .patientCard {
+    width: 100%;
+    max-width: 360px;
+    margin: 12px auto;
+    padding: 18px 16px;
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .patientGenderWrapper {
+    top: 12px;
+    right: 12px;
+  }
+
+  .patientPhoto {
+    width: 92px;
+    height: 92px;
+    margin-bottom: 6px;
+  }
+
+  .patientInfo {
+    margin: 0;
+    text-align: center;
+    width: 100%;
+  }
+
+  .patientName {
+    font-size: 22px;
+  }
+
+  .ownerName {
+    font-size: 13px;
+  }
+
+  .healthRecordButton {
+    width: 100%;
+    max-width: 220px;
+    height: 46px;
+    margin-top: 10px;
+    border-radius: 14px;
+    font-size: 0.95rem;
+  }
+}

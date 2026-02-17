@@ -9,11 +9,17 @@
   padding-top: 30px;
   padding-right: 80px;
 }
+
+.sizePages {
+  min-height: calc(100vh - 57px);
+}
+
 .logo {
   height: 100px;
   width: auto;
   margin-left: 6rem;
 }
+
 .healthRecordPage {
   display: flex;
   flex-direction: column;
@@ -181,9 +187,21 @@
 }
 
 .imagePet {
-  border-radius: 50%;
+  height: 120px;
+  width: 120px;
+  padding: 20px;
 }
 
+.divImage {
+  width: 2;
+  border-radius: 50%;
+  border: solid 7px var(--owner-color);
+}
+
+.divImage.vet {
+  border-radius: 50%;
+  border: solid 7px var(--vet-color);
+}
 .buttonsContainer {
   display: flex;
   flex-direction: row;
@@ -261,10 +279,10 @@
 }
 @media screen and (max-width: 900px) {
   .petVet {
-    display: flex;
-    justify-content: space-between;
-    font-size: 2.5rem;
+    font-size: 2rem;
     padding: 1rem;
+    justify-content: space-between;
+    width: 80vw;
   }
 
   .logo {

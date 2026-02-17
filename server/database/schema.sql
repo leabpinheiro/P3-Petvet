@@ -15,7 +15,7 @@ CREATE TABLE pet (
   id INT PRIMARY KEY AUTO_INCREMENT,
   name VARCHAR(30) NOT NULL,
   tattoo_nb VARCHAR(10) NULL,
-  chip_nb INT(11) NULL,
+  chip_nb BIGINT(15) NULL,
   born_at DATETIME NOT NULL,
   gender ENUM("m","f"),
   specie ENUM("chien","chat","lapin"),
@@ -29,8 +29,8 @@ CREATE TABLE pet_user (
   pet_id INT NOT NULL,
   user_id INT NOT NULL,
   PRIMARY KEY (pet_id, user_id),
-  FOREIGN KEY (user_id) REFERENCES user(id),
-  FOREIGN KEY (pet_id) REFERENCES pet(id)
+  FOREIGN KEY (pet_id) REFERENCES pet(id),
+  FOREIGN KEY (user_id) REFERENCES user(id)
 );
 
 CREATE TABLE reminder (

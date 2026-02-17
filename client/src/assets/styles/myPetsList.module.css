@@ -2,6 +2,10 @@ body {
   background-color: var(--main-color);
 }
 
+.sizePage {
+  min-height: calc(100vh - 57px);
+}
+
 .petVet {
   display: flex;
   justify-content: space-between;
@@ -60,7 +64,7 @@ body {
   align-items: center;
   margin: auto;
   background-color: white;
-  width: 500px;
+  width: 400px;
   height: 200px;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
   border-radius: 15px;
@@ -78,12 +82,17 @@ body {
 }
 
 .imagePetList {
-  height: 140px;
-  width: 140px;
-  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  padding: 20px;
 }
 
-h3 {
+.divImage {
+  border-radius: 50%;
+  border: solid 7px var(--owner-color);
+}
+
+.petInfo h3 {
   font-family: var(--font-logo);
   font-weight: bolder;
   font-size: 1.4rem;
@@ -103,6 +112,7 @@ h3 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  text-align: center;
   width: 60%;
 }
 
@@ -156,17 +166,24 @@ h3 {
     font-size: 2.5rem;
     padding: 1rem;
   }
-
+  .gender {
+    margin-bottom: 20px;
+  }
   .logo {
     height: 80px;
     margin: 0;
   }
-
   .mainPage {
     display: contents;
     flex-direction: column;
     align-items: center;
     padding-right: 0;
+  }
+  .petVet {
+    font-size: 2rem;
+    padding: 1rem;
+    justify-content: space-between;
+    width: 80vw;
   }
   .allPage {
     width: 100%;
@@ -199,12 +216,19 @@ h3 {
     width: 100%;
     height: auto;
   }
-  .imagePetList {
+  .divImage {
     height: 70px;
     width: 70px;
+    border: solid 3px var(--owner-color);
+    margin-right: 10px;
+  }
+  .imagePetList {
+    height: 54px;
+    width: 54px;
+    padding: 8px;
   }
   h3 {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
   .specie {
     font-size: 0.9rem;

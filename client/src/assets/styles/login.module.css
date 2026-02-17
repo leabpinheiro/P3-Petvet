@@ -5,21 +5,27 @@
     ), url("/images/dog-and-mom.jpg");
   background-size: cover;
   background-position: center;
-  min-height: 100vh;
+  min-height: calc(100vh - 57px);
   display: flex;
   flex-direction: column;
 }
 
-.navLogin {
+.navHead {
   display: flex;
   align-items: center;
   padding: 10px 20px;
   justify-content: space-between;
+}
+.navLogin {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 10px 20px;
+  justify-content: space-between;
 
   .buttonHomeLoginPage {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    position: relative;
+    top: -108px;
     width: 12rem;
     height: 3rem;
     font-size: 1rem;
@@ -227,7 +233,12 @@
   color: var(--vet-color);
 }
 
-@media (max-width: 768px) {
+.errorMessage {
+  color: #d4896c;
+  font-weight: 800;
+}
+
+@media (max-width: 1200px) {
   .navLogin {
     display: flex;
     justify-content: space-between;
@@ -256,7 +267,17 @@
     justify-content: normal;
     border-radius: 15px 15px 0 0;
   }
+  .navLogin .buttonHomeLoginPage {
+    top: 50px;
+  }
+  .loginSectionText h1 {
+    font-size: 1.4rem;
+  }
 
+  .loginSectionText p {
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+  }
   .loginSectionForm h1 {
     margin: 1rem 0;
     font-size: 2rem;
@@ -288,7 +309,7 @@
     width: 100%;
   }
   .registerButton {
-    margin: 0;
+    margin: 10px 0 0 0;
     width: 100%;
     font-size: 1rem;
     padding: 0.5rem 1rem 0.5rem 1rem;

@@ -1,0 +1,277 @@
+.allSections {
+  display: flex;
+  justify-content: space-around;
+}
+
+.petSection {
+  background-color: white;
+  margin-top: 50px;
+  padding: 20px;
+  height: 480px;
+  border-radius: 15px;
+  color: var(--text-color);
+}
+
+.myPatients {
+  font-family: var(--font-title);
+  font-size: 1.8rem;
+  font-weight: bold;
+  padding-bottom: 10px;
+}
+
+.patientsCards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 20px;
+}
+
+.patientInfos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  width: 250px;
+  height: 150px;
+  border-radius: 15px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: stretch;
+  background-color: var(--main-color);
+}
+
+.gender {
+  text-align: right;
+  font-size: larger;
+  font-family: var(--font-text);
+}
+
+.patientInfo {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.patientImage {
+  height: 50px;
+  width: 50px;
+  padding: 20px;
+}
+.divImage {
+  border-radius: 50%;
+  border: solid 7px var(--vet-color);
+}
+
+.patientText {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  max-width: 18ch;
+}
+.patientText h3 {
+  font-family: var(--font-logo);
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+.owner {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.1rem;
+  font-family: var(--font-text);
+  padding: 10px;
+}
+
+.owner span {
+  font-weight: lighter;
+  color: var(--vet-color);
+}
+
+.viewMoreContainer {
+  display: flex;
+  justify-content: end;
+  padding-top: 20px;
+}
+
+.viewMore {
+  border: none;
+  font-family: var(--font-text);
+  font-size: 1.1rem;
+  text-decoration: underline;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.todoSection {
+  background-color: white;
+  margin-top: 50px;
+  padding: 1.25rem;
+  border-radius: 15px;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+  width: 400px;
+  height: 550px;
+  color: var(--text-color);
+}
+
+.todoToday {
+  font-family: var(--font-title);
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding-bottom: 10px;
+}
+
+.addTodoText {
+  display: block;
+  font-family: var(--font-text);
+  color: var(--text-color);
+  padding: 10px;
+  font-size: 1.1rem;
+  background-color: #e7e7e7;
+  border-radius: 50px;
+  border: none;
+  width: 250px;
+}
+
+.addTodos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 30px;
+}
+
+.todoCards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-height: 400px;
+  width: auto;
+  padding-right: 10px;
+}
+
+.todoCard {
+  width: 300px;
+  border: none;
+  padding: 1rem;
+  background-color: var(--main-color);
+  border-radius: 50px;
+  margin: 0.5rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+  gap: 10px;
+}
+
+.notDone {
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.checkBox {
+  transform: scale(2);
+  cursor: pointer;
+}
+
+.crossImg {
+  height: 40px;
+  width: 40px;
+}
+
+.closingBtn {
+  border: none;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  background-color: var(--main-color);
+  cursor: pointer;
+}
+
+.addTodoBtn {
+  display: flex;
+  justify-content: center;
+  background-color: var(--vet-color);
+  font-family: var(--font-text);
+  font-size: 1.1rem;
+  color: white;
+  width: 150px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  text-decoration: none;
+  margin-top: 10px;
+}
+
+.noData {
+  font-family: var(--font-title);
+  color: #d4896c;
+  font-size: 1.5rem;
+}
+
+.done {
+  opacity: 0.6;
+}
+
+.todoDone {
+  text-decoration: line-through;
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.todoList {
+  max-height: 400px;
+  overflow-y: auto;
+  padding-right: 10px;
+  scrollbar-color: var(--vet-color) #f0f0f0;
+  scrollbar-width: auto;
+}
+
+@media screen and (max-width: 600px) {
+  .allSections {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .patientsCards {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    padding-bottom: 10px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .patientsCards::-webkit-scrollbar {
+    display: none;
+  }
+
+  .patientInfos {
+    min-width: 280px;
+    scroll-snap-align: start;
+  }
+
+  .petSection {
+    width: 87%;
+    height: auto;
+  }
+
+  .viewMoreContainer {
+    justify-content: center;
+  }
+
+  .todoSection {
+    width: 87%;
+  }
+
+  .todoCard {
+    width: auto;
+  }
+}

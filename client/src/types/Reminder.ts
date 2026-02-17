@@ -4,7 +4,7 @@ export interface Reminder {
   programmed_at: string;
   content: string;
   dosage: number;
-  photo: string;
+  specie: string;
   frequency: string;
   frequency_count: string;
   pet_id: number;

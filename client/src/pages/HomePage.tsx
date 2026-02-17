@@ -3,6 +3,7 @@ import "../assets/styles/homePageAnimation.css";
 import { useEffect, useState } from "react";
 import { Link } from "react-router";
 import styles from "../assets/styles/homePage.module.css";
+import Footer from "../components/Footer";
 
 function HomePage() {
   const [showButton, setShowButton] = useState(false);
@@ -253,6 +254,7 @@ function HomePage() {
         >
           ↑
         </button>
+        <Footer />
       </main>
     </>
   );

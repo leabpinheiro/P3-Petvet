@@ -3,6 +3,9 @@ import type { Pet } from "../types/Pet";
 import "../assets/styles/reset.css";
 import "../assets/styles/variables.css";
 import { Link } from "react-router";
+import cat from "../../public/images/chat_3.png";
+import dog from "../../public/images/chien_5.png";
+import rabbit from "../../public/images/lapin-de-paques.png";
 import styles from "../assets/styles/myPetsList.module.css";
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
@@ -40,59 +43,71 @@ function MyPetsList() {
     : "/images/green/logo.png";
   return (
     <>
-      <header className={styles.petVet}>
-        <img src={logoSrc} alt="logo" className={styles.logo} />
-        <h1>Pet&Vet</h1>
-      </header>
-      <main className={styles.mainPage}>
-        <NavBar />
-        <div className={styles.allPage}>
-          <div className={styles.titleContainer}>
-            <h2 className={styles.title}>Ma Tribu :</h2>
-            <button type="button" className={styles.addAnimal}>
-              Ajouter un animal
-            </button>
-          </div>
-          {pets.length === 0 && (
-            <p className={styles.errorMessage}>
-              Vous n'avez aucun animal à afficher. Pensez à ajouter un animal à
-              votre tribu.
-            </p>
-          )}
-          <section className={styles.petCards}>
-            <div className={styles.petCardsContainer}>
-              {pets.map((pet) => (
-                <article className={styles.petCard} key={pet.id}>
-                  <p className={styles.gender}>{formatGender(pet.gender)}</p>
-                  <div className={styles.petInfoContainer}>
-                    <img
-                      src={pet.photo}
-                      alt={pet.name}
-                      className={styles.imagePetList}
-                    />
-                    <div className={styles.petInfo}>
-                      <h3>{pet.name}</h3>
-                      <p className={styles.specie}>
-                        {pet.specie} - {pet.breed}
-                      </p>
-                    </div>
-                  </div>
-                  <div className={styles.button}>
-                    <Link
-                      to={`/pet-profile/${pet.id}`}
-                      className={styles.linkButton}
-                    >
-                      <button type="button" className={styles.profilAccess}>
-                        Fiche de santé
-                      </button>
-                    </Link>
-                  </div>
-                </article>
-              ))}
+      <div className={styles.sizePage}>
+        <header className={styles.petVet}>
+          <img src={logoSrc} alt="logo" className={styles.logo} />
+          <h1>Pet&Vet</h1>
+        </header>
+        <main className={styles.mainPage}>
+          <NavBar />
+          <div className={styles.allPage}>
+            <div className={styles.titleContainer}>
+              <h2 className={styles.title}>Ma Tribu :</h2>
+              <Link to="/my-pets/pets/new">
+                <button type="button" className={styles.addAnimal}>
+                  Ajouter un animal
+                </button>
+              </Link>
             </div>
-          </section>
-        </div>
-      </main>
+            {pets.length === 0 && (
+              <p className={styles.errorMessage}>
+                Vous n'avez aucun animal à afficher. Pensez à ajouter un animal
+                à votre tribu.
+              </p>
+            )}
+            <section className={styles.petCards}>
+              <div className={styles.petCardsContainer}>
+                {pets.map((pet) => (
+                  <article className={styles.petCard} key={pet.id}>
+                    <p className={styles.gender}>{formatGender(pet.gender)}</p>
+                    <div className={styles.petInfoContainer}>
+                      <div className={styles.divImage}>
+                        <img
+                          src={
+                            pet.specie === "chat"
+                              ? cat
+                              : pet.specie === "chien"
+                                ? dog
+                                : rabbit
+                          }
+                          alt={pet.name}
+                          className={styles.imagePetList}
+                        />
+                      </div>
+                      <div className={styles.petInfo}>
+                        <h3>{pet.name}</h3>
+                        <p className={styles.specie}>
+                          {pet.specie} - {pet.breed}
+                        </p>
+                      </div>
+                    </div>
+                    <div className={styles.button}>
+                      <Link
+                        to={`/pet-profile/${pet.id}`}
+                        className={styles.linkButton}
+                      >
+                        <button type="button" className={styles.profilAccess}>
+                          Fiche de santé
+                        </button>
+                      </Link>
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </section>
+          </div>
+        </main>
+      </div>
       <Footer />
     </>
   );

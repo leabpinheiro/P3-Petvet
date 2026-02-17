@@ -1,0 +1,73 @@
+body {
+  background-color: var(--main-color);
+}
+
+.sizePage {
+  min-height: calc(100vh - 57px);
+}
+
+.allSection {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.petVet {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-logo);
+  font-weight: 800;
+  font-size: 3rem;
+  color: var(--text-color);
+  padding-top: 30px;
+  padding-right: 80px;
+}
+
+.logo {
+  height: 100px;
+  width: auto;
+  margin-left: 6rem;
+}
+
+.userName {
+  font-family: var(--font-title);
+  font-size: 3rem;
+  font-weight: bold;
+  padding-left: 50px;
+}
+.mainPage {
+  display: flex;
+}
+
+.components {
+  width: 100%;
+}
+
+@media screen and (max-width: 678px) {
+  .mainPage {
+    display: flex;
+    flex-direction: column;
+    height: inherit;
+  }
+
+  .userName {
+    font-size: 2rem;
+    justify-content: end;
+  }
+
+  .petVet img {
+    height: 80px;
+    margin: 0;
+  }
+
+  .petVet {
+    font-size: 2rem;
+    padding: 1rem;
+    justify-content: space-between;
+    width: 80vw;
+  }
+
+  .userName {
+    padding-top: 20px;
+  }
+}

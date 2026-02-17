@@ -5,16 +5,22 @@
     ), url(/images/dog-and-mom.jpg);
   background-size: cover;
   background-position: center;
-  min-height: 100vh;
+  min-height: calc(100vh - 57px);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-.navRegister {
+.navHead {
   display: flex;
   align-items: center;
   padding: 10px 20px;
   justify-content: space-between;
+}
+
+.navRegister {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .navRegister img {
@@ -22,10 +28,9 @@
   width: auto;
   object-fit: contain;
 }
-.navRegister .buttonHomeRegisterPage {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+.buttonHomeRegisterPage {
+  position: relative;
+  top: -85px;
   width: 12rem;
   height: 3rem;
   font-size: 1rem;
@@ -266,7 +271,7 @@
     height: 80px;
   }
   .navRegister .buttonHomeRegisterPage {
-    top: 120px;
+    top: 40px;
   }
 
   .toggleWrapperRegister {
@@ -284,13 +289,16 @@
   }
   .formSectionRegister h2 {
     font-size: 1.5rem;
+    text-align: center;
   }
 
   .formSectionRegister p {
     font-size: 1rem;
     margin: 0;
   }
-
+  .formRegister .buttonSubmit {
+    width: 50%;
+  }
   .sectionRegister .imageSectionRegister {
     height: 100px;
     width: auto;

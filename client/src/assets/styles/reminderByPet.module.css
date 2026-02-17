@@ -55,6 +55,8 @@
   font-family: var(--font-text);
   font-weight: bold;
   font-size: 1.1rem;
+  max-width: 20ch;
+  word-break: break-all;
   color: var(--text-color);
 }
 .reminderContainer .buttonReminder p {
