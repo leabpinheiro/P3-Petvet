@@ -9,7 +9,7 @@ const client = mysql.createPool({
   user: DB_USER,
   password: DB_PASSWORD,
   database: DB_NAME,
-  ssl: { rejectUnauthorized: true },
+  ssl: { rejectUnauthorized: false },
   waitForConnections: true,
   connectionLimit: 5,
 });
