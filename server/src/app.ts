@@ -20,18 +20,18 @@ app.use(
 app.use(express.json());
 
 // Routes de l'API
+// Routes de l'API EN PREMIER
 app.use(router);
 
-// Gestion des fichiers statiques (Production)
-const publicFolderPath = path.join(__dirname, "../../server/public");
-if (fs.existsSync(publicFolderPath)) {
-  app.use(express.static(publicFolderPath));
-}
-
+// Fichiers statiques APRÈS
 const clientBuildPath = path.join(__dirname, "../../client/dist");
 if (fs.existsSync(clientBuildPath)) {
   app.use(express.static(clientBuildPath));
-  app.get("*", (_, res) => {
+  app.get("*", (req, res) => {
+    if (req.path.startsWith("/api")) {
+      res.status(404).json({ message: "API route not found" });
+      return;
+    }
     res.sendFile("index.html", { root: clientBuildPath });
   });
 }
