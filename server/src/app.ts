@@ -8,9 +8,13 @@ import router from "./router";
 const app = express();
 
 // Configuration CORS
-if (process.env.CLIENT_URL != null) {
-  app.use(cors({ origin: [process.env.CLIENT_URL] }));
-}
+
+app.use(
+  cors({
+    origin: process.env.CLIENT_URL || true,
+    credentials: true,
+  }),
+);
 
 // Parsing des requêtes JSON
 app.use(express.json());
