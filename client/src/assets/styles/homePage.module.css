@@ -519,7 +519,6 @@ main .buttonsBottom img {
 
   main img {
     max-width: 280px;
-    /* width: 100%; */
     height: auto;
     margin: 0 auto;
     border-radius: 20px;

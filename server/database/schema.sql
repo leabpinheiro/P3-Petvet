@@ -10,7 +10,6 @@ CREATE TABLE user (
   order_nb INT NULL
 );
 
-
 CREATE TABLE pet (
   id INT PRIMARY KEY AUTO_INCREMENT,
   name VARCHAR(30) NOT NULL,
