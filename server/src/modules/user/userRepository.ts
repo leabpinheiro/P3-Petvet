@@ -14,13 +14,19 @@ export interface User {
 
 class userRepository {
   async getByEmail(email: string) {
-    const [row] = await databaseClient.query<Rows>(
-      `SELECT *
-      FROM user
-      WHERE user.email = ?
-      `,
-      [email],
-    );
+    console.log("🔴 getByEmail appelé avec :", email);
+
+    const result = await Promise.race([
+      databaseClient.query<Rows>("SELECT * FROM user WHERE user.email = ?", [
+        email,
+      ]),
+      new Promise<never>((_, reject) =>
+        setTimeout(() => reject(new Error("⏰ DB timeout 8s")), 8000),
+      ),
+    ]);
+
+    console.log("🟢 getByEmail résultat reçu");
+    const [row] = result as Rows[];
     return row[0];
   }
 
