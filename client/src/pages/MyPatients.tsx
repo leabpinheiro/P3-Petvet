@@ -191,7 +191,7 @@ export default function PetSearch() {
                 onClick={addNewPet}
                 disabled={!selectedPet}
               >
-                <img src="../../public/images/white-cross.png" alt="plus" />
+                <img src="/images/white-cross.png" alt="plus" />
                 Ajouter l'animal
               </button>
             </section>
