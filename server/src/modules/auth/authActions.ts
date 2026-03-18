@@ -45,23 +45,20 @@ const checkLogin: RequestHandler = (req, res, next) => {
     res.sendStatus(401);
   }
 };
+
 const login: RequestHandler = async (req, res, next) => {
   try {
-    console.log("🔴 login handler appelé");
     const user = await userRepository.getByEmail(req.body.email);
-    console.log("🟡 user trouvé :", user ? "oui" : "non");
 
     if (user == null) {
       res.status(StatusCodes.UNPROCESSABLE_ENTITY);
       return;
     }
 
-    console.log("🟡 début argon2.verify");
     const verified = await argon2.verify(
       user.hashed_password,
       req.body.password,
     );
-    console.log("🟢 argon2.verify terminé :", verified);
 
     if (verified) {
       const { hashed_password, ...userWithoutHashedPassword } = user;
@@ -71,7 +68,7 @@ const login: RequestHandler = async (req, res, next) => {
         role: user.role,
       };
 
-      const token = await jwt.sign(payload, process.env.APP_SECRET as string, {
+      const token = jwt.sign(payload, process.env.APP_SECRET as string, {
         expiresIn: "1h",
       });
 

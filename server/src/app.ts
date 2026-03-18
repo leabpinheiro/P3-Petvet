@@ -7,8 +7,6 @@ import router from "./router";
 
 const app = express();
 
-// Configuration CORS
-
 app.use(
   cors({
     origin: process.env.CLIENT_URL || true,
@@ -16,14 +14,15 @@ app.use(
   }),
 );
 
-// Parsing des requêtes JSON
 app.use(express.json());
 
-// Routes de l'API
-// Routes de l'API EN PREMIER
 app.use(router);
 
-// Fichiers statiques APRÈS
+const publicFolderPath = path.join(__dirname, "../../server/public");
+if (fs.existsSync(publicFolderPath)) {
+  app.use(express.static(publicFolderPath));
+}
+
 const clientBuildPath = path.join(__dirname, "../../client/dist");
 if (fs.existsSync(clientBuildPath)) {
   app.use(express.static(clientBuildPath));
@@ -36,7 +35,6 @@ if (fs.existsSync(clientBuildPath)) {
   });
 }
 
-// Middleware de gestion d'erreurs
 const logErrors: ErrorRequestHandler = (err, req, res, next) => {
   console.error(err);
   next(err);

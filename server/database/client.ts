@@ -10,6 +10,7 @@ const client = mysql.createPool({
   password: DB_PASSWORD,
   database: DB_NAME,
   ssl: { rejectUnauthorized: false },
+  connectTimeout: 10000,
   waitForConnections: true,
   connectionLimit: 5,
 });
