@@ -16,11 +16,6 @@ app.use(
 
 app.use(express.json());
 
-app.use((req, res, next) => {
-  console.log(`📨 ${req.method} ${req.path}`);
-  next();
-});
-
 app.use(router);
 
 const publicFolderPath = path.join(__dirname, "../../server/public");
